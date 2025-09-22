@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="/node_modules/convex/dist/browser.bundle.js"></script>
+    <script>
+        // Assign the Convex module to the global scope
+        if (typeof convex !== 'undefined') {
+            window.Convex = convex;
+        }
+    </script>
 </head>
 <body>
     <header class="header">
@@ -127,7 +134,7 @@
                             <div class="phone-screen">
                                 <div class="app-content">
                                     <div class="app-header">
-                                        <div class="app-title">DocuGen Pro</div>
+                                        <div class="app-title">DocuApp Pro</div>
                                         <div class="app-menu">
                                             <div class="menu-dot"></div>
                                             <div class="menu-dot"></div>
@@ -177,7 +184,7 @@
                                                 </svg>
                                             </div>
                                             <div class="doc-info">
-                                                <div class="doc-title">Technical Design</div>
+                                                <div class="doc-title">Document A</div>
                                                 <div class="doc-status status-progress">In Progress</div>
                                             </div>
                                         </div>
@@ -206,7 +213,7 @@
                                                 </svg>
                                             </div>
                                             <div class="doc-info">
-                                                <div class="doc-title">Implementation Plan</div>
+                                                <div class="doc-title">Document B</div>
                                                 <div class="doc-status status-pending">Pending</div>
                                             </div>
                                         </div>
@@ -438,6 +445,7 @@
                 </div>
                 
                 <div class="signup-form">
+                    <!-- Removed Test Email Button -->
                     <form class="form" id="signupForm">
                         <div class="form-availability" style="margin-bottom: 0.75rem; color: var(--text-secondary); font-size: 0.9rem;">
                             <span data-weekly-cap-info>Limited spots each week</span>
@@ -471,12 +479,23 @@
                                 <option value="both">Both Mobile & Web</option>
                             </select>
                         </div>
-                        <button type="submit" class="form-submit">
-                            <span>Get Your Free Documentation</span>
-                            <svg class="button-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </button>
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label class="form-label">Which documents do you need?<br><small class="form-help">Pick as many as you like—you can request the rest later.</small></label>
+                                <div class="doc-pills">
+                                    <label><input type="checkbox" name="documents" value="A" checked><span>A – PRD</span></label>
+                                    <label><input type="checkbox" name="documents" value="B" checked><span>B – Tech Design</span></label>
+                                    <label><input type="checkbox" name="documents" value="C"><span>C – Impl. Plan</span></label>
+                                    <label><input type="checkbox" name="documents" value="D"><span>D – User Manual</span></label>
+                                    <label><input type="checkbox" name="documents" value="E"><span>E – Roadmap</span></label>
+                                </div>
+                            </div>
+                            <button type="submit" class="form-submit">
+                                <span>Get Your Free Documentation</span>
+                                <svg class="button-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
                         <p style="margin-top: 1rem; font-size: 0.875rem; color: var(--text-secondary);">100% free, no hidden costs</p>
                     </form>
                     

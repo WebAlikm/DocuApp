@@ -2092,3 +2092,83 @@ a:focus-visible {
 .form-availability {
   margin-top: 0.75rem;
 }
+/* Document selector styling */
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+.form-multiselect {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: 1rem;
+  min-height: 8rem; /* show ~4 options */
+}
+.form-multiselect:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+.form-help {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+/* Document picker pills */
+.doc-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.doc-pills label {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+.doc-pills label input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.doc-pills label span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--gray-100);
+  border: 1px solid var(--gray-300);
+  color: var(--gray-800);
+  border-radius: 999px;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.85rem;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+}
+.doc-pills label:hover span {
+  background: var(--gray-200);
+}
+.doc-pills label:focus-within span {
+  outline: 2px solid rgba(59,130,246,0.25);
+  outline-offset: 2px;
+}
+.doc-pills input[type="checkbox"]:checked + span {
+  background: var(--primary-blue);
+  border-color: var(--primary-blue);
+  color: var(--white);
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.25);
+}
+
+.form-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+.form-help {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}

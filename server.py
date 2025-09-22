@@ -72,6 +72,9 @@ def format_human(dt: datetime):
 
 
 class WaitlistHandler(SimpleHTTPRequestHandler):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, directory=BASE_DIR, **kwargs)
+    
     def _set_cors_headers(self):
         self.send_header('Access-Control-Allow-Origin', '*')
         self.send_header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
@@ -94,6 +97,9 @@ class WaitlistHandler(SimpleHTTPRequestHandler):
 
     def do_GET(self):
         parsed = urlparse(self.path)
+        # Serve static files from node_modules
+        if self.path.startswith('/node_modules/'):
+            return super().do_GET()
         if parsed.path == '/api/waitlist/status':
             state = load_state()
             wk = current_week_key()
